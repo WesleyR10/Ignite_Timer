@@ -58,11 +58,11 @@ const STATUS_COLORS = {
 } as const
 
 interface StatusProps {
-  statuscolor: keyof typeof STATUS_COLORS
+  statusColor: keyof typeof STATUS_COLORS
 }
 
 export const Status = styled.span.withConfig({
-  shouldForwardProp: (prop) => prop === 'statuscolor' || prop === 'children',
+  shouldForwardProp: (prop) => prop === 'statusColor' || prop === 'children',
 })<StatusProps>`
   display: flex;
   align-items: center;
@@ -73,6 +73,6 @@ export const Status = styled.span.withConfig({
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background: ${(props) => props.theme[STATUS_COLORS[props.statuscolor]]};
+    background: ${(props) => props.theme[STATUS_COLORS[props.statusColor]]};
   }
 `;
